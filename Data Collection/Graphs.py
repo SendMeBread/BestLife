@@ -1,11 +1,13 @@
 import numpy as np
-import pandas as pd
-
 import matplotlib as mpl
 import matplotlib.pyplot as plt
-
-import seaborn as sns
-import seaborn.objects as so
-data = {'Lap':[1, 2, 3, 4, 5],'Avg':[174.86, 172.49, 175.14, 170.92, 168.28]}
-df = pd.DataFrame(data)
-sns.relplot(data=df, x="Lap", y="Avg", kind="line")
+t_s = 2.5
+t_a = (((972 - t_s)/712) + ((122 - t_s)/103))/2
+x = np.arange(-80, 1, 80)
+print("Values of x:", x)
+y = x * t_a
+plt.plot(x, y)
+plt.title("BIBO 3D Print Time Deviation")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.show()
