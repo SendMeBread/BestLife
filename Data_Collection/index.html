@@ -11,10 +11,11 @@
 <body>
     The way we process our data dictates our lives, maybe even whether we live or die. We could look at the trends of how people die, and then do the same thing.
     <br>Common example: If your friend jumps off a bridge (and dies) should you jump too? The answer is an obvious no! The graph below shows survival rates of jumping off a 200 foot building.
+    <div id="kd_graph"></div>
     <py-config>
         packages = ["matplotlib", "numpy"]
         files = ["graphs.py"]
     </py-config>
-    <py-script src="graphs.py"></py-script>
+    <py-script src="graphs.py" output="kd_graph"></py-script>
 </body>
 </html>
