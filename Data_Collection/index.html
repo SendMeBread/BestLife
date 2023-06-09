@@ -1,21 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Collection</title>
-    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css">
-    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Wait, Data?</title>
 </head>
 <body>
-    The way we process our data dictates our lives, maybe even whether we live or die. We could look at the trends of how people die, and then do the same thing.
-    <br>Common example: If your friend jumps off a bridge (and dies) should you jump too? The answer is an obvious no! The graph below shows survival rates of jumping off a 200 foot building.
-    <div id="kd_graph"></div>
-    <py-config>
-        packages = ["matplotlib", "numpy"]
-        files = ["graphs.py"]
-    </py-config>
-    <py-script src="graphs.py" output="kd_graph"></py-script>
+   If you saw 100 people jump off a 200 foot tall building and ALL die, would you jump too? Unless your suicidal, no! That's insane! How did we decide that? A formula in our head telling us NOT TO JUMP OFF THAT BUILDING. It analyses every little thing, even without us knowing.<br>It can change our perception of people, businesses, and so much more.<br>Here is a graph to make you see how obvious it looks, but how our minds really work.
+   <br><br>
+   <div id="fig_el9105747493831849284828516"></div>
+   <script>
+      function mpld3_load_lib(url, callback){
+      var s = document.createElement('script');
+      s.src = url;
+      s.async = true;
+      s.onreadystatechange = s.onload = callback;
+      s.onerror = function(){console.warn("failed to load library " + url);};
+      document.getElementsByTagName("head")[0].appendChild(s);
+      }
+      
+      if(typeof(mpld3) !== "undefined" && mpld3._mpld3IsLoaded){
+         // already loaded: just create the figure
+         !function(mpld3){
+            
+            mpld3.draw_figure("fig_el9105747493831849284828516", {"width": 1280.0, "height": 960.0, "axes": [], "data": {}, "id": "el910574749383184", "plugins": [{"type": "reset"}, {"type": "zoom", "button": true, "enabled": false}, {"type": "boxzoom", "button": true, "enabled": false}]});
+         }(mpld3);
+      }else if(typeof define === "function" && define.amd){
+         // require.js is available: use it to load d3/mpld3
+         require.config({paths: {d3: "https://d3js.org/d3.v5"}});
+         require(["d3"], function(d3){
+            window.d3 = d3;
+            mpld3_load_lib("https://mpld3.github.io/js/mpld3.v0.5.9.js", function(){
+               
+               mpld3.draw_figure("fig_el9105747493831849284828516", {"width": 1280.0, "height": 960.0, "axes": [], "data": {}, "id": "el910574749383184", "plugins": [{"type": "reset"}, {"type": "zoom", "button": true, "enabled": false}, {"type": "boxzoom", "button": true, "enabled": false}]});
+            });
+         });
+      }else{
+         // require.js not available: dynamically load d3 & mpld3
+         mpld3_load_lib("https://d3js.org/d3.v5.js", function(){
+               mpld3_load_lib("https://mpld3.github.io/js/mpld3.v0.5.9.js", function(){
+                     
+                     mpld3.draw_figure("fig_el9105747493831849284828516", {"width": 1280.0, "height": 960.0, "axes": [], "data": {}, "id": "el910574749383184", "plugins": [{"type": "reset"}, {"type": "zoom", "button": true, "enabled": false}, {"type": "boxzoom", "button": true, "enabled": false}]});
+                  })
+               });
+      }
+   </script>  
 </body>
 </html>
