@@ -8,5 +8,4 @@ labels = ['Lived', 'Died']
 colors = ['#00d', '#c00']
 plt.pie(vals, colors=colors)
 plt.legend(labels, title="Did they live?")
-mpld3.show()
-mpld3.save_html(plt.figure(), 'why_not.html')
+mpld3.save_html(plt.figure(), 'why_not.html', template_type='simple')
