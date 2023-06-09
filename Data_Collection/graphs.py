@@ -6,4 +6,4 @@ labels = ['Lived', 'Died']
 colors = ['#00d', '#c00']
 plt.pie(vals, colors=colors)
 plt.legend(labels, title="Did they live?")
-plt
+plt.show()
