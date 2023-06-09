@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import numpy as np
 
 vals = np.array([0, 100])
 labels = ['Lived', 'Died']
