@@ -25,6 +25,12 @@
     a{
         font-size: 28px;
     }
+    button{
+        background-color: #0f0;
+        color: #000;
+        border-color: #f00;
+        border-radius: 5px;
+    }
    </style>
 </head>
 <body>
@@ -32,10 +38,6 @@
     If you saw 100 people jump off a 200 foot tall building and ALL die, would you jump too?<br>Unless your suicidal, no! That's insane! How did we decide that? A formula in our head telling us NOT TO JUMP OFF THAT BUILDING. It analyses every little thing, even without us knowing.<br>It can change our perception of people, businesses, and so much more.<br>Here is a graph to make you see how obvious it looks, but how our minds really work.
     <br><br>
     <button onclick="show_hide()" id="show-hide_pie">Show/Hide Graph</button>
-    <footer>
-        <a id="vlink1" style="color: #ff6600;"><strong>HTML: VALID!</strong></a>
-        <a id="vlink2" style="color: #6699ff;"><strong>CSS: VALID!</strong></a>
-    </footer>
     <br>
     <nav>
         <a href="../../BestLife/index.html">Title Page</a>
@@ -43,14 +45,6 @@
         <a href="../Application/what_i_do.html">Application</a>
     </nav>
     <script>
-        function init(){
-        let loc = window.location.href;
-        let HTMLvalidLinkStr = 'http://validator.w3.org/check?uri=' + loc;
-        let CSSvalidLinkStr = 'http://jigsaw.w3.org/css-validator/validator?uri=' + loc + '?profile=css3';
-        document.getElementById("vlink1").setAttribute("href", HTMLvalidLinkStr);
-        document.getElementById("vlink2").setAttribute("href", CSSvalidLinkStr);
-        }
-        window.onload = init;
         const pie = document.getElementById("pie")
         function show_hide(){
             if(pie.style.visibility === "hidden"){
